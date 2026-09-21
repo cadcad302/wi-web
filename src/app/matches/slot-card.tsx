@@ -1,12 +1,6 @@
 import { Button } from "@/components/ui/button"
-import {
-  Item,
-  ItemActions,
-  ItemContent,
-  ItemDescription,
-  ItemMedia,
-  ItemTitle,
-} from "@/components/ui/item"
+import { Trash } from "lucide-react"
+
 
 import { Card,
     CardHeader,
@@ -16,7 +10,7 @@ import { Card,
     CardDescription,
     CardContent, } from "@/components/ui/card"
 
-import { cn } from "cn"
+
 
 export default function Slot({
     name,
@@ -27,7 +21,7 @@ export default function Slot({
     host: string
 }) {
     return (
-        <Card className="max-w-sm overflow-hidden p-0">
+        <Card className="max-w-sm overflow-hidden p-0 font-mono">
         {/* Image at the top */}
         <div className="invert h-70 w-full overflow-hidden bg-muted">
         </div>
@@ -45,8 +39,14 @@ export default function Slot({
         </CardContent>
   
         <CardFooter className="flex justify-between">
-          <CardAction>
-            <Button className={"w-30 h-12 text-lg"}>Open</Button>
+          <CardAction className="flex justify-between items-center w-full p-0">
+            <div className="flex items-center justify-between w-full rounded-lg">
+                <Button className={"w-32 h-12 text-lg"}>Open</Button>
+                <Button className="flex h-12 w-12 justify color bg-red-700 hover:bg-red-400">
+                    <Trash className="size-large"/>
+                </Button>
+            </div>
+            
           </CardAction>
         </CardFooter>
       </Card>
