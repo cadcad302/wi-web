@@ -1,0 +1,22 @@
+// use prisma-8
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  username  String?
+  name      String?
+  createdAt DateTime @default(now())
+}
+
+model Data {
+
+}
+
+model Slot {
+  id Int @id @default(autoincrement())
+  host User
+  members User[]
+  name String
+  
+}
+
