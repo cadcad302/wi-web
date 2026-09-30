@@ -42,3 +42,7 @@ next-env.d.ts
 node_modules/
 dist/
 .env
+
+
+# docker
+docker-compose.yml
