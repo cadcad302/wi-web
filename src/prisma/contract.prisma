@@ -6,17 +6,12 @@ model User {
   username  String?
   name      String?
   createdAt DateTime @default(now())
+  saves     Int[]    @default([])
 }
 
-model Data {
-
+model Save {
+  id      Int    @id @default(autoincrement())
+  host    Int
+  members Int[]  @default([])
+  name    String
 }
-
-model Slot {
-  id Int @id @default(autoincrement())
-  host User
-  members User[]
-  name String
-  
-}
-
